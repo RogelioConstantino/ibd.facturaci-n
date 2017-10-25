@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="costos.master.cs" Inherits="Ibd.SiMer.Web.costos" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Costos de Transmisión</title>
+        <asp:PlaceHolder runat="server">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet" />
+                        
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                
+        <%: Scripts.Render("~/bundles/js") %>
+        <%: Styles.Render("~/bundles/material") %>
+        <%: Styles.Render("~/bundles/css") %>
+        
+    </asp:PlaceHolder>
+</head>
+<body>
+   
+    <!--cabecerad e logotipos-->
+    <div class="i-cabecera-logos">
+        <div class="row">
+            <div class="col s6">
+                <a href="scoreCard2.aspx"><img src="<%= ResolveUrl("~/Content/img/iberdrola-logo.png") %>" alt="Iberdrola" /></a>
+            </div>
+            <div class="col s1  offset-s5 olive  light-green-text text-darken-3 " style="  margin-top:55px;">
+                <i class="material-icons prefix olive">account_circle</i>
+                <asp:Label ID="lblUserName" runat="server" style="color: #454545; font-size:11px;" >Rogelio C.R.</asp:Label>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Submenus -->
+    <ul id="ddCargas" class="dropdown-content">                
+        <li><a href="<%= ResolveUrl("~/ResumenCarga.aspx") %>" class="text-center"><i class="material-icons left">view_week</i>Resumen</a></li>
+    </ul>
+
+   <ul id="ddFacturacion" class="dropdown-content">
+       
+       <li><a href="<%= ResolveUrl("~/ResumenCFECostosTransCarga.aspx") %>" class="text-center"><i class="material-icons left">input</i>Carga de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resumen CFE</a></li>
+       <li><a href="<%= ResolveUrl("~/ResumenCFECostos.aspx") %>" class="text-center">          <i class="material-icons left">print</i>Consulta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resumen CFE</a></li>
+       
+       <li class="divider"></li>
+       
+       <li><a href="<%= ResolveUrl("~/Segregacion.aspx") %>" class="text-center"><i class="material-icons left">input</i>Soporte de  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Factura</a></li>       
+       <li><a href="<%= ResolveUrl("~/Resumen.aspx") %>" class="text-center"><i class="material-icons left">print</i>Consulta de  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soporte</a></li>
+    
+       <li class="divider"></li>
+
+       <li><a href="<%= ResolveUrl("~/ResumenCFECostosTransCarga.aspx") %>" class="text-center"><i class="material-icons left">input</i>Actualizar&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plantilla</a></li>             
+
+    </ul>
+
+    <ul id="ddSeguridad" class="dropdown-content">
+        <li><a href="<%= ResolveUrl("~/usuario.aspx") %>"><i class="material-icons left">perm_identity</i>Usuarios</a></li>                
+        <li><a href="<%= ResolveUrl("~/roles.aspx") %>"><i class="material-icons left">picture_in_picture</i>Roles</a></li>
+        <li class="divider"></li>
+        <li><a href="<%= ResolveUrl("~/contrasena.aspx") %>"><i class="material-icons left">vpn_key</i>Cambio de Contraseña</a></li>        
+    </ul>
+    <ul id="ddCatalogos" class="dropdown-content">
+        <li><a href="<%= ResolveUrl("~/grupos.aspx") %>"><i class="material-icons left">business</i>Grupos</a></li>                
+        <li><a href="<%= ResolveUrl("~/clientes.aspx") %>"><i class="material-icons left">contacts</i>Clientes</a></li>    
+        <li><a href="<%= ResolveUrl("~/puntosCarga.aspx") %>"><i class="material-icons left">play_for_work</i>Puntos de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Carga</a></li>
+        <li><a href="<%= ResolveUrl("~/tarifas.aspx") %>"><i class="material-icons left">today</i>Tarifas</a></li>         
+    </ul>
+<%--    <ul id="ddReportes" class="dropdown-content">                
+        <li><a href="<%= ResolveUrl("~/Resumen.aspx") %>" class="text-center"><i class="material-icons left">view_week</i>Resumen</a></li>    
+        <li><a href="<%= ResolveUrl("~/rptMedidasSocios.aspx") %>"><i class="material-icons left">print</i>Medidas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Socios</a></li>       
+    </ul>--%>
+    <ul id="ddTipo" class="dropdown-content">                
+        <li><a href="<%= ResolveUrl("~/scoreCard.aspx") %>" class="text-center" >Mercado</a></li>
+        <li><a href="<%= ResolveUrl("~/scoreCard2.aspx") %>" class="text-center">Liquidación Privados Altamira V</a></li>
+        <li><a href="<%= ResolveUrl("~/scoreCardCostos.aspx") %>" class="text-center active"><i class="material-icons right">done</i>Costos de Transmisión</a></li>
+    </ul>
+    <ul id="ddReportes" class="dropdown-content">        
+        <li><a href="<%= ResolveUrl("~/rptCostosTrans.aspx") %>"><i class="material-icons left">print</i>Costos de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transmisión</a></li>                
+    </ul>
+
+    <!-- Menus -->
+    <nav>
+        <div class="nav-wrapper">            
+            <a href="scoreCardCostos.aspx" class="brand-logo"><i class="material-icons  left">monetization_on</i>Costos  Transmisión</a>
+            
+            <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
+            <ul class="right hide-on-med-and-down">                       
+                <li><a class="dropdown-button" href="#!" data-activates="ddFacturacion"><i class="material-icons left">input</i> Cargas<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="ddReportes"><i class="material-icons left">print</i> Reportes<i class="material-icons right">arrow_drop_down</i></a></li>                                
+                <li><a class="dropdown-button" href="#!" data-activates="ddCatalogos"><i class="material-icons left">view_module</i>Catálogos<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="ddTipo"><i class="material-icons left">view_module</i>Módulo<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li class="separate"></li>
+                <li><a href="<%= ResolveUrl("~/default.aspx") %>"><i class="material-icons left">power_settings_new</i></a></li>                
+            </ul>
+           <%-- <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <a class="dropdown-button" href="#!" data-activates="ddCargas1">Cargas
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button disabled" href="#!" data-activates="ddCatalogos1" >Catálogos
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button" href="#!" data-activates="ddReportes1" >Reportes
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button" href="#!" data-activates="ddReportes1" >Reportes
+                        <i class="material-icons right">power_settings_new</i>
+                    </a>
+                </li>
+                --%>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

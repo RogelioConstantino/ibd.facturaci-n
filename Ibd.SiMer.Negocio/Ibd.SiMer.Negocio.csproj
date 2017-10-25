@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D47B7F9-791D-4DC3-8CD8-14D24BABCC71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ibd.SiMer.Negocio</RootNamespace>
+    <AssemblyName>Ibd.SiMer.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchivoCFECalificadosNe.cs" />
+    <Compile Include="ArchivoCincominutalNe.cs" />
+    <Compile Include="ArchivoResumenFacNe.cs" />
+    <Compile Include="ArchivoSegregacionNe.cs" />
+    <Compile Include="ArchivosInfoBasicaNe.cs" />
+    <Compile Include="AñosNe.cs" />
+    <Compile Include="BasesContratoNe.cs" />
+    <Compile Include="centralesNe.cs" />
+    <Compile Include="CFECalificadosNe.cs" />
+    <Compile Include="clientesNe.cs" />
+    <Compile Include="ComportamientoNe.cs" />
+    <Compile Include="configuracionesNe.cs" />
+    <Compile Include="empresasNe.cs" />
+    <Compile Include="gruposNE.cs" />
+    <Compile Include="horarioNe.cs" />
+    <Compile Include="LogCargaCincoMinutalesNe.cs" />
+    <Compile Include="logCargaMinutalNe.cs" />
+    <Compile Include="loginNe.cs" />
+    <Compile Include="Managers\ConexionMng.cs" />
+    <Compile Include="MesesNe.cs" />
+    <Compile Include="PuntoCargaNe.cs" />
+    <Compile Include="puntosCargaNe.cs" />
+    <Compile Include="regionesNe.cs" />
+    <Compile Include="ResumenFacNe.cs" />
+    <Compile Include="rptAnaliticaCFECalificadosNe.cs" />
+    <Compile Include="rptAnaliticaNe.cs" />
+    <Compile Include="rptConcentradoNe.cs" />
+    <Compile Include="rptCostosTransmisionNe.cs" />
+    <Compile Include="rptMedidasSociosNe.cs" />
+    <Compile Include="scoreBoardNe.cs" />
+    <Compile Include="segregacionNe.cs" />
+    <Compile Include="tarifaNe.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\Ibd.Framework\Ibd.Framework\bin\Debug\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\Ibd.Framework\Ibd.Framework\bin\Debug\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet, Version=41.3.30.1091, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Ibd.SiMer.Web\bin\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ibd.Framework\Ibd.Framework\Ibd.Framework.csproj">
+      <Project>{6d4e432d-8bd8-445a-befb-038fe611866f}</Project>
+      <Name>Ibd.Framework</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Ibd.SiMer.Datos\Ibd.SiMer.Datos.csproj">
+      <Project>{3913ba66-fd02-42bd-a770-dbacd542a1fd}</Project>
+      <Name>Ibd.SiMer.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ibd.SiMer.Entidades\Ibd.SiMer.Entidades.csproj">
+      <Project>{547f143f-e1e2-4bc8-ab8b-8499e00498d9}</Project>
+      <Name>Ibd.SiMer.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSource1">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.32.36.115;Initial Catalog=SIMER</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>9318fe0d-0c39-4f7e-a9dd-c6edadc62db6</DataSourceID>
+</RptDataSource>

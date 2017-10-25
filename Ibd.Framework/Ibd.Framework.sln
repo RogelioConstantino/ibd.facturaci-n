@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ibd.Framework", "Ibd.Framework\Ibd.Framework.csproj", "{6D4E432D-8BD8-445A-BEFB-038FE611866F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEjemplo", "WebEjemplo\WebEjemplo.csproj", "{9ADE16E2-ACB2-4F2E-9097-6073E45A5DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMaterialize", "WebMaterialize\WebMaterialize.csproj", "{C758D531-7911-4F6F-A0EF-14D04D9EC3F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D4E432D-8BD8-445A-BEFB-038FE611866F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4E432D-8BD8-445A-BEFB-038FE611866F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4E432D-8BD8-445A-BEFB-038FE611866F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4E432D-8BD8-445A-BEFB-038FE611866F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ADE16E2-ACB2-4F2E-9097-6073E45A5DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADE16E2-ACB2-4F2E-9097-6073E45A5DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADE16E2-ACB2-4F2E-9097-6073E45A5DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADE16E2-ACB2-4F2E-9097-6073E45A5DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C758D531-7911-4F6F-A0EF-14D04D9EC3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C758D531-7911-4F6F-A0EF-14D04D9EC3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C758D531-7911-4F6F-A0EF-14D04D9EC3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C758D531-7911-4F6F-A0EF-14D04D9EC3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://iberdrola-mex.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Ibd.Framework\\Ibd.Framework.csproj
+		SccProjectName1 = Ibd.Framework
+		SccLocalPath1 = Ibd.Framework
+		SccProjectUniqueName2 = WebEjemplo\\WebEjemplo.csproj
+		SccProjectName2 = WebEjemplo
+		SccLocalPath2 = WebEjemplo
+		SccProjectUniqueName3 = WebMaterialize\\WebMaterialize.csproj
+		SccProjectName3 = WebMaterialize
+		SccLocalPath3 = WebMaterialize
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsRptFacMercado" targetNamespace="http://tempuri.org/DsRptFacMercado.xsd" xmlns:mstns="http://tempuri.org/DsRptFacMercado.xsd" xmlns="http://tempuri.org/DsRptFacMercado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="SIMERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SIMERConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.SIMERConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SIMERConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      A.año, A.mes, format(CONVERT(date, '2017-' + CONVERT(varchar, A.mes) + '-01'), 'MMM-yy') AS nombreMes, z.ZonasCarga AS [Zonas de Carga], p.PuntoCarga AS [Punto de Carga], 
+                        A.Cargo_energia_CD AS [Cargo por Energia CON descuento], A.Cargo_Demanda_SD AS [Cargo por Demanda CON descuento], A.Cargo_energia_SD AS [Cargo por Energia SIN descuento], 
+                        A.Cargo_Demanda_CD AS [Cargo por Demanda SIN descuento], A.Cargo_Demanda_CD + A.Cargo_energia_CD + A.Cargo_Demanda_SD + A.Cargo_energia_SD AS [Total antes de IVA], 
+                        A.Energia AS Energía, A.Demanda_Facturable AS [Demanda facturable]
+FROM          Analitica AS A INNER JOIN
+                        PuntosCarga AS p ON A.PuntodeCarga = p.IdPuntoCarga INNER JOIN
+                        ZonasCarga AS z ON z.IdZonasCarga = p.IdZonaCarga</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Zonas de Carga" DataSetColumn="Zonas_de_Carga" />
+              <Mapping SourceColumn="Punto de Carga" DataSetColumn="Punto_de_Carga" />
+              <Mapping SourceColumn="Cargo por Energia CON descuento" DataSetColumn="Cargo_por_Energia_CON_descuento" />
+              <Mapping SourceColumn="Cargo por Demanda CON descuento" DataSetColumn="Cargo_por_Demanda_CON_descuento" />
+              <Mapping SourceColumn="Cargo por Energia SIN descuento" DataSetColumn="Cargo_por_Energia_SIN_descuento" />
+              <Mapping SourceColumn="Cargo por Demanda SIN descuento" DataSetColumn="Cargo_por_Demanda_SIN_descuento" />
+              <Mapping SourceColumn="Total antes de IVA" DataSetColumn="Total_antes_de_IVA" />
+              <Mapping SourceColumn="Energía" DataSetColumn="Energía" />
+              <Mapping SourceColumn="Demanda facturable" DataSetColumn="Demanda_facturable" />
+              <Mapping SourceColumn="nombreMes" DataSetColumn="nombreMes" />
+              <Mapping SourceColumn="año" DataSetColumn="año" />
+              <Mapping SourceColumn="mes" DataSetColumn="mes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsRptFacMercado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsRptFacMercado" msprop:Generator_UserDSName="DsRptFacMercado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Zonas_de_Carga" msprop:Generator_ColumnVarNameInTable="columnZonas_de_Carga" msprop:Generator_ColumnPropNameInRow="Zonas_de_Carga" msprop:Generator_ColumnPropNameInTable="Zonas_de_CargaColumn" msprop:Generator_UserColumnName="Zonas_de_Carga">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Punto_de_Carga" msprop:Generator_ColumnVarNameInTable="columnPunto_de_Carga" msprop:Generator_ColumnPropNameInRow="Punto_de_Carga" msprop:Generator_ColumnPropNameInTable="Punto_de_CargaColumn" msprop:Generator_UserColumnName="Punto_de_Carga">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cargo_por_Energia_CON_descuento" msprop:Generator_ColumnVarNameInTable="columnCargo_por_Energia_CON_descuento" msprop:Generator_ColumnPropNameInRow="Cargo_por_Energia_CON_descuento" msprop:Generator_ColumnPropNameInTable="Cargo_por_Energia_CON_descuentoColumn" msprop:Generator_UserColumnName="Cargo_por_Energia_CON_descuento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cargo_por_Demanda_CON_descuento" msprop:Generator_ColumnVarNameInTable="columnCargo_por_Demanda_CON_descuento" msprop:Generator_ColumnPropNameInRow="Cargo_por_Demanda_CON_descuento" msprop:Generator_ColumnPropNameInTable="Cargo_por_Demanda_CON_descuentoColumn" msprop:Generator_UserColumnName="Cargo_por_Demanda_CON_descuento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cargo_por_Energia_SIN_descuento" msprop:Generator_ColumnVarNameInTable="columnCargo_por_Energia_SIN_descuento" msprop:Generator_ColumnPropNameInRow="Cargo_por_Energia_SIN_descuento" msprop:Generator_ColumnPropNameInTable="Cargo_por_Energia_SIN_descuentoColumn" msprop:Generator_UserColumnName="Cargo_por_Energia_SIN_descuento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cargo_por_Demanda_SIN_descuento" msprop:Generator_ColumnVarNameInTable="columnCargo_por_Demanda_SIN_descuento" msprop:Generator_ColumnPropNameInRow="Cargo_por_Demanda_SIN_descuento" msprop:Generator_ColumnPropNameInTable="Cargo_por_Demanda_SIN_descuentoColumn" msprop:Generator_UserColumnName="Cargo_por_Demanda_SIN_descuento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_antes_de_IVA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal_antes_de_IVA" msprop:Generator_ColumnPropNameInRow="Total_antes_de_IVA" msprop:Generator_ColumnPropNameInTable="Total_antes_de_IVAColumn" msprop:Generator_UserColumnName="Total_antes_de_IVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Energía" msprop:Generator_ColumnVarNameInTable="columnEnergía" msprop:Generator_ColumnPropNameInRow="Energía" msprop:Generator_ColumnPropNameInTable="EnergíaColumn" msprop:Generator_UserColumnName="Energía" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Demanda_facturable" msprop:Generator_ColumnVarNameInTable="columnDemanda_facturable" msprop:Generator_ColumnPropNameInRow="Demanda_facturable" msprop:Generator_ColumnPropNameInTable="Demanda_facturableColumn" msprop:Generator_UserColumnName="Demanda_facturable" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nombreMes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombreMes" msprop:Generator_ColumnPropNameInRow="nombreMes" msprop:Generator_ColumnPropNameInTable="nombreMesColumn" msprop:Generator_UserColumnName="nombreMes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="año" msprop:Generator_ColumnVarNameInTable="columnaño" msprop:Generator_ColumnPropNameInRow="año" msprop:Generator_ColumnPropNameInTable="añoColumn" msprop:Generator_UserColumnName="año" type="xs:int" minOccurs="0" />
+              <xs:element name="mes" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

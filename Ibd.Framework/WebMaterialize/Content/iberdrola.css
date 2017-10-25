@@ -1,0 +1,101 @@
+﻿.i-cabecera-administracion {
+  height: 40px;
+  background-color: #e7e9eb;
+  text-align: right;
+  padding: .6rem 1rem;
+  color: #5f6971; }
+  .i-cabecera-administracion span {
+    font-weight: bold; }
+
+.i-cabecera-logos {
+  height: 100px;
+  margin-left: 2rem;
+  padding: .5rem; }
+  .i-cabecera-logos img {
+    height: 83px; }
+  .i-cabecera-logos a {
+    border-bottom: none; }
+    .i-cabecera-logos a:hover {
+      border-bottom: none; }
+
+
+.i-menu-superior {
+  background-color: #5c881a;
+  height: 35px; }
+  .i-menu-superior ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+    height: 100%; }
+  .i-menu-superior a {
+    height: 100%;
+    padding: 0 3rem;
+    line-height: 2;
+    border: 2px solid #5c881a;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -o-transition: 200ms;
+    -ms-transition: 200ms;
+    transition: 200ms; }
+    .i-menu-superior a:hover {
+      color: white;
+      border: 2px solid #fefefe; }
+  .i-menu-superior a.i-opt-activa {
+    background-color: #fefefe;
+    color: #5c881a; }
+    .i-menu-superior a.i-opt-activa:hover {
+      cursor: default;
+      border: 2px solid #5c881a;
+      color: #5c881a; }
+
+    .i-menu-trigger {
+    display: none;
+    border: 1px solid #aaa;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0;
+    z-index: 9;
+    cursor: pointer;
+}
+
+    nav ul a {
+font-size: 1rem;
+color: #FFF;
+}
+nav,
+nav .nav-wrapper i,
+nav a.button-collapse,
+nav a.button-collapse i {
+height: 45px;
+line-height: 45px;
+}
+
+
+
+
+    /**/
+    nav {
+  color: white;
+  background-color: #5c881a;
+  width: 100%;
+  /*height: 39px;*/
+  /*line-height: 56px;*/
+  padding-left: 30px; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+
+.dropdown-content li > a, .dropdown-content li > span
+{
+    background-color: #8fb234;
+    color: white;
+}

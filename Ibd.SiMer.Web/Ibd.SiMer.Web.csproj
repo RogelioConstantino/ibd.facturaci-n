@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D43C5D3D-C36E-456D-9CD1-5C98C8EF2ED2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ibd.SiMer.Web</RootNamespace>
+    <AssemblyName>Ibd.SiMer.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.7.123, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.86.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.86.0\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet, Version=41.3.30.1091, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.802.134\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bajarresumengral.aspx" />
+    <Content Include="BasesContratoCarga.aspx" />
+    <Content Include="Facturacion\CfeCalificados\CFECalificados.aspx" />
+    <Content Include="Facturacion\CfeCalificados\CFECalificadosCarga.aspx" />
+    <Content Include="cincoMinutales.aspx" />
+    <Content Include="clientes.aspx" />
+    <Content Include="configuraciones.aspx" />
+    <Content Include="content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="content\DataTables\css\buttons.foundation.css" />
+    <Content Include="content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\dataTables.material.css" />
+    <Content Include="content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="content\DataTables\css\responsive.foundation.css" />
+    <Content Include="content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="content\DataTables\css\scroller.foundation.css" />
+    <Content Include="content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="content\DataTables\css\select.bootstrap.css" />
+    <Content Include="content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="content\DataTables\css\select.dataTables.css" />
+    <Content Include="content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="content\DataTables\css\select.foundation.css" />
+    <Content Include="content\DataTables\css\select.foundation.min.css" />
+    <Content Include="content\DataTables\css\select.jqueryui.css" />
+    <Content Include="content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="content\DataTables\css\select.semanticui.css" />
+    <Content Include="content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="content\DataTables\images\details_close.png" />
+    <Content Include="content\DataTables\images\details_open.png" />
+    <Content Include="content\DataTables\images\sort_asc.png" />
+    <Content Include="content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="content\DataTables\images\sort_both.png" />
+    <Content Include="content\DataTables\images\sort_desc.png" />
+    <Content Include="content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="content\DataTables\swf\flashExport.swf" />
+    <Content Include="content\img\wall.jpg" />
+    <Content Include="content\materialize\css\materialize-stepper.css" />
+    <Content Include="content\materialize\css\materialize-stepper.min.css" />
+    <Content Include="content\materialize\css\materialize.css" />
+    <Content Include="content\materialize\css\materialize.min.css" />
+    <Content Include="content\materialize\font\material-design-icons\LICENSE.txt" />
+    <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
+    <Content Include="contrasena.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="facturacion.aspx" />
+    <Content Include="Facturacion1.aspx" />
+    <Content Include="Facturacion\CfeCalificados\rptDetalleyAnalitica.aspx" />
+    <Content Include="Facturacion\CfeCalificados\facturacion_CFECalificados.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="grupos.aspx" />
+    <Content Include="horarios.aspx" />
+    <Content Include="InfoBasica.aspx" />
+    <Content Include="js_\bootstrap.min.css" />
+    <Content Include="js_\dataTables.bootstrap.min.css" />
+    <Content Include="js_\dataTables.bootstrap.min.js" />
+    <Content Include="js_\dataTables.fixedColumns.min.js" />
+    <Content Include="js_\fixedColumns.bootstrap.min.css" />
+    <Content Include="js_\jquery-1.12.4.js" />
+    <Content Include="js_\jquery.dataTables.min.js" />
+    <Content Include="logCargaCincominutales.aspx" />
+    <Content Include="logTarifas.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Main.Master" />
+    <Content Include="content\materialize\font\roboto\Roboto-Thin.woff2" />
+    <Content Include="content\materialize\font\roboto\Roboto-Thin.woff" />
+    <Content Include="content\materialize\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="content\materialize\font\roboto\Roboto-Thin.eot" />
+    <Content Include="content\materialize\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="content\materialize\font\roboto\Roboto-Regular.woff" />
+    <Content Include="content\materialize\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="content\materialize\font\roboto\Roboto-Regular.eot" />
+    <Content Include="content\materialize\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="content\materialize\font\roboto\Roboto-Medium.woff" />
+    <Content Include="content\materialize\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="content\materialize\font\roboto\Roboto-Medium.eot" />
+    <Content Include="content\materialize\font\roboto\Roboto-Light.woff2" />
+    <Content Include="content\materialize\font\roboto\Roboto-Light.woff" />
+    <Content Include="content\materialize\font\roboto\Roboto-Light.ttf" />
+    <Content Include="content\materialize\font\roboto\Roboto-Light.eot" />
+    <Content Include="content\materialize\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="content\materialize\font\roboto\Roboto-Bold.woff" />
+    <Content Include="content\materialize\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="content\materialize\font\roboto\Roboto-Bold.eot" />
+    <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.woff2" />
+    <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.woff" />
+    <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.ttf" />
+    <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.eot" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="content\materialize\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="content\DataTables\css\semanticui.scss" />
+    <Content Include="content\DataTables\css\mixins.scss" />
+    <Content Include="content\DataTables\css\common.scss" />
+    <Content Include="Principal.aspx" />
+    <Content Include="puntosCarga.aspx" />
+    <Content Include="report-viewer.aspx" />
+    <Content Include="Reportes\rptFacturacionMercado.aspx" />
+    <Content Include="Resumen.aspx" />
+    <Content Include="ResumenCarga.aspx" />
+    <Content Include="ResumenCFECostos.aspx" />
+    <Content Include="ResumenCFECostosTransCarga.aspx" />
+    <Content Include="roles.aspx" />
+    <Content Include="rptAnalitica.aspx" />
+    <Content Include="rptAnalitica1.aspx" />
+    <Content Include="Facturacion\CfeCalificados\rptAnaliticaCFECalificados.aspx" />
+    <Content Include="rptBITHorario.aspx" />
+    <Content Include="rptConcentrado.aspx" />
+    <Content Include="rptCostosTrans.aspx" />
+    <Content Include="rptMedidasSocios.aspx" />
+    <Content Include="scoreCard2.aspx" />
+    <Content Include="scoreCardCostos.aspx" />
+    <Content Include="Scripts\jquery.aCollapTable.js" />
+    <Content Include="Scripts\jquery.aCollapTable.min.js" />
+    <Content Include="Segregacion.aspx" />
+    <Content Include="SegregacionCarga.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebService\wsClientes.asmx" />
+    <Content Include="WebService\wsGrupos.asmx" />
+    <Content Include="Main2.Master" />
+    <Content Include="costos.Master" />
+    <None Include="Properties\PublishProfiles\IIS.pubxml" />
+    <Content Include="Scripts\bower.json" />
+    <Content Include="rpt\TemplateReporteFacturacionMercado.xlsx" />
+    <Content Include="rpt\DsRptFacMercado.xsc">
+      <DependentUpon>DsRptFacMercado.xsd</DependentUpon>
+    </Content>
+    <None Include="rpt\DsRptFacMercado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsRptFacMercado.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="rpt\DsRptFacMercado.xss">
+      <DependentUpon>DsRptFacMercado.xsd</DependentUpon>
+    </Content>
+    <Content Include="rpt\TemplateReporteFacturacionMercado_3.xlsx" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="ScoreBoard.aspx" />
+    <Content Include="scoreCard.aspx" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="sideMaster.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\dataTables.material.min.css" />
+    <Content Include="content\iberdrola.css" />
+    <Content Include="content\img\iberdrola-logo.png" />
+    <Content Include="content\material.min.css" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\materialize\materialize-stepper.js" />
+    <Content Include="Scripts\materialize\materialize-stepper.min.js" />
+    <Content Include="Scripts\materialize\materialize.js" />
+    <Content Include="Scripts\materialize\materialize.min.js" />
+    <Content Include="tarifas.aspx" />
+    <Content Include="usuario.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Bajarresumengral.aspx.cs">
+      <DependentUpon>Bajarresumengral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bajarresumengral.aspx.designer.cs">
+      <DependentUpon>Bajarresumengral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasesContratoCarga.aspx.cs">
+      <DependentUpon>BasesContratoCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasesContratoCarga.aspx.designer.cs">
+      <DependentUpon>BasesContratoCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\CFECalificados.aspx.cs">
+      <DependentUpon>CFECalificados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\CFECalificados.aspx.designer.cs">
+      <DependentUpon>CFECalificados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\CFECalificadosCarga.aspx.cs">
+      <DependentUpon>CFECalificadosCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\CFECalificadosCarga.aspx.designer.cs">
+      <DependentUpon>CFECalificadosCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cincoMinutales.aspx.cs">
+      <DependentUpon>cincoMinutales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cincoMinutales.aspx.designer.cs">
+      <DependentUpon>cincoMinutales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clientes.aspx.cs">
+      <DependentUpon>clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clientes.aspx.designer.cs">
+      <DependentUpon>clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="configuraciones.aspx.cs">
+      <DependentUpon>configuraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="configuraciones.aspx.designer.cs">
+      <DependentUpon>configuraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contrasena.aspx.cs">
+      <DependentUpon>contrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contrasena.aspx.designer.cs">
+      <DependentUpon>contrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="costos.Master.cs">
+      <DependentUpon>costos.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="costos.Master.designer.cs">
+      <DependentUpon>costos.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DataTables.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="facturacion.aspx.cs">
+      <DependentUpon>facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facturacion.aspx.designer.cs">
+      <DependentUpon>facturacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion1.aspx.cs">
+      <DependentUpon>Facturacion1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion1.aspx.designer.cs">
+      <DependentUpon>Facturacion1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\rptDetalleyAnalitica.aspx.cs">
+      <DependentUpon>rptDetalleyAnalitica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\rptDetalleyAnalitica.aspx.designer.cs">
+      <DependentUpon>rptDetalleyAnalitica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\facturacion_CFECalificados.aspx.cs">
+      <DependentUpon>facturacion_CFECalificados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\facturacion_CFECalificados.aspx.designer.cs">
+      <DependentUpon>facturacion_CFECalificados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="grupos.aspx.cs">
+      <DependentUpon>grupos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grupos.aspx.designer.cs">
+      <DependentUpon>grupos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="horarios.aspx.cs">
+      <DependentUpon>horarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="horarios.aspx.designer.cs">
+      <DependentUpon>horarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoBasica.aspx.cs">
+      <DependentUpon>InfoBasica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoBasica.aspx.designer.cs">
+      <DependentUpon>InfoBasica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logCargaCincominutales.aspx.cs">
+      <DependentUpon>logCargaCincominutales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logCargaCincominutales.aspx.designer.cs">
+      <DependentUpon>logCargaCincominutales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logTarifas.aspx.cs">
+      <DependentUpon>logTarifas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logTarifas.aspx.designer.cs">
+      <DependentUpon>logTarifas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Main2.Master.cs">
+      <DependentUpon>Main2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main2.Master.designer.cs">
+      <DependentUpon>Main2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="puntosCarga.aspx.cs">
+      <DependentUpon>puntosCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="puntosCarga.aspx.designer.cs">
+      <DependentUpon>puntosCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report-viewer.aspx.cs">
+      <DependentUpon>report-viewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report-viewer.aspx.designer.cs">
+      <DependentUpon>report-viewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptFacturacionMercado.aspx.cs">
+      <DependentUpon>rptFacturacionMercado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptFacturacionMercado.aspx.designer.cs">
+      <DependentUpon>rptFacturacionMercado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resumen.aspx.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resumen.aspx.designer.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenCarga.aspx.cs">
+      <DependentUpon>ResumenCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResumenCarga.aspx.designer.cs">
+      <DependentUpon>ResumenCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenCFECostos.aspx.cs">
+      <DependentUpon>ResumenCFECostos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResumenCFECostos.aspx.designer.cs">
+      <DependentUpon>ResumenCFECostos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenCFECostosTransCarga.aspx.cs">
+      <DependentUpon>ResumenCFECostosTransCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResumenCFECostosTransCarga.aspx.designer.cs">
+      <DependentUpon>ResumenCFECostosTransCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="roles.aspx.cs">
+      <DependentUpon>roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="roles.aspx.designer.cs">
+      <DependentUpon>roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptAnalitica.aspx.cs">
+      <DependentUpon>rptAnalitica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptAnalitica.aspx.designer.cs">
+      <DependentUpon>rptAnalitica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptAnalitica1.aspx.cs">
+      <DependentUpon>rptAnalitica1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptAnalitica1.aspx.designer.cs">
+      <DependentUpon>rptAnalitica1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\rptAnaliticaCFECalificados.aspx.cs">
+      <DependentUpon>rptAnaliticaCFECalificados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion\CfeCalificados\rptAnaliticaCFECalificados.aspx.designer.cs">
+      <DependentUpon>rptAnaliticaCFECalificados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptBITHorario.aspx.cs">
+      <DependentUpon>rptBITHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptBITHorario.aspx.designer.cs">
+      <DependentUpon>rptBITHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptConcentrado.aspx.cs">
+      <DependentUpon>rptConcentrado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptConcentrado.aspx.designer.cs">
+      <DependentUpon>rptConcentrado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptCostosTrans.aspx.cs">
+      <DependentUpon>rptCostosTrans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptCostosTrans.aspx.designer.cs">
+      <DependentUpon>rptCostosTrans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptMedidasSocios.aspx.cs">
+      <DependentUpon>rptMedidasSocios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptMedidasSocios.aspx.designer.cs">
+      <DependentUpon>rptMedidasSocios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rpt\DsRptFacMercado.cs">
+      <DependentUpon>DsRptFacMercado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rpt\DsRptFacMercado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsRptFacMercado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreBoard.aspx.cs">
+      <DependentUpon>ScoreBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScoreBoard.aspx.designer.cs">
+      <DependentUpon>ScoreBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scoreCard.aspx.cs">
+      <DependentUpon>scoreCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scoreCard.aspx.designer.cs">
+      <DependentUpon>scoreCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scoreCard2.aspx.cs">
+      <DependentUpon>scoreCard2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scoreCard2.aspx.designer.cs">
+      <DependentUpon>scoreCard2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scoreCardCostos.aspx.cs">
+      <DependentUpon>scoreCardCostos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scoreCardCostos.aspx.designer.cs">
+      <DependentUpon>scoreCardCostos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Segregacion.aspx.cs">
+      <DependentUpon>Segregacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Segregacion.aspx.designer.cs">
+      <DependentUpon>Segregacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SegregacionCarga.aspx.cs">
+      <DependentUpon>SegregacionCarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SegregacionCarga.aspx.designer.cs">
+      <DependentUpon>SegregacionCarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sideMaster.Master.cs">
+      <DependentUpon>sideMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sideMaster.Master.designer.cs">
+      <DependentUpon>sideMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="tarifas.aspx.cs">
+      <DependentUpon>tarifas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tarifas.aspx.designer.cs">
+      <DependentUpon>tarifas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.aspx.cs">
+      <DependentUpon>usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuario.aspx.designer.cs">
+      <DependentUpon>usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\wsClientes.asmx.cs">
+      <DependentUpon>wsClientes.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService\wsGrupos.asmx.cs">
+      <DependentUpon>wsGrupos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ibd.Framework\Ibd.Framework\Ibd.Framework.csproj">
+      <Project>{6d4e432d-8bd8-445a-befb-038fe611866f}</Project>
+      <Name>Ibd.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ibd.SiMer.Entidades\Ibd.SiMer.Entidades.csproj">
+      <Project>{547f143f-e1e2-4bc8-ab8b-8499e00498d9}</Project>
+      <Name>Ibd.SiMer.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ibd.SiMer.Negocio\Ibd.SiMer.Negocio.csproj">
+      <Project>{5d47b7f9-791d-4dc3-8cd8-14d24babcc71}</Project>
+      <Name>Ibd.SiMer.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Archivos\Anexos\" />
+    <Folder Include="Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\rptFactMercado.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8236</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8236/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

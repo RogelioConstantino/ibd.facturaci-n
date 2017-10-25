@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D4E432D-8BD8-445A-BEFB-038FE611866F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ibd.Framework</RootNamespace>
+    <AssemblyName>Ibd.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.86.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ClosedXML.0.86.0\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.9.2.235, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AccesoDatos\Referencias\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.9.2.235, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AccesoDatos\Referencias\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.0.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AccesoDatos\Referencias\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDatos\BaseDatosException.cs" />
+    <Compile Include="AccesoDatos\BdFactory.cs" />
+    <Compile Include="AccesoDatos\BdMongo.cs" />
+    <Compile Include="AccesoDatos\BdMySql.cs" />
+    <Compile Include="AccesoDatos\BDProvider.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\CadenaConexionCollection.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\CadenaConexionConfigurationSection.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\CadenaConexionElement.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\ConexionDefault.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\ConexionDefaultFactory.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\IConexion.cs" />
+    <Compile Include="AccesoDatos\CadenaConexion\IConexionFactory.cs" />
+    <Compile Include="AccesoDatos\ConexionesConfig\ConexionCollection.cs" />
+    <Compile Include="AccesoDatos\ConexionesConfig\ConexionConfigurationSection.cs" />
+    <Compile Include="AccesoDatos\ConexionesConfig\ConexionElement.cs" />
+    <Compile Include="AccesoDatos\IBaseDatos.cs" />
+    <Compile Include="AccesoDatos\Mongo\EntityService.cs" />
+    <Compile Include="AccesoDatos\Mongo\IEntityService.cs" />
+    <Compile Include="AccesoDatos\Mongo\IMongoEntity.cs" />
+    <Compile Include="AccesoDatos\Mongo\MongoConnectionHandler.cs" />
+    <Compile Include="AccesoDatos\Mongo\MongoEntity.cs" />
+    <Compile Include="Archivos\Archivo.cs" />
+    <Compile Include="Archivos\ArchivoExcel.cs" />
+    <Compile Include="Archivos\ArchivoTxt.cs" />
+    <Compile Include="Atributos.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Crypt\Encrypt.cs" />
+    <Compile Include="Crypt\PropertiesEncrypt.cs" />
+    <Compile Include="EMail\EMail.cs" />
+    <Compile Include="EMail\EMailSmtp.cs" />
+    <Compile Include="ErrorHandler.cs" />
+    <Compile Include="Extensores\CadenaExtencion.cs" />
+    <Compile Include="Extensores\DataReaderExtencion.cs" />
+    <Compile Include="Extensores\DateTimeExtencion.cs" />
+    <Compile Include="Extensores\GenericListExtencion.cs" />
+    <Compile Include="Extensores\IntExtencion.cs" />
+    <Compile Include="Extensores\LinqExtencion.cs" />
+    <Compile Include="Extensores\ObjetoExtencion.cs" />
+    <Compile Include="Extensores\StringBuilderExtencion.cs" />
+    <Compile Include="Extensores\XmlExtencion.cs" />
+    <Compile Include="Globalizacion.cs" />
+    <Compile Include="Log\Class1.cs" />
+    <Compile Include="Log\Log.cs" />
+    <Compile Include="Log\LogConfig\AppLogCollection.cs" />
+    <Compile Include="Log\LogConfig\AppLogConfigurationSection.cs" />
+    <Compile Include="Log\LogConfig\AppLogElement.cs" />
+    <Compile Include="Log\LogEventVwr.cs" />
+    <Compile Include="Log\LogFactory.cs" />
+    <Compile Include="Log\LogMongo.cs" />
+    <Compile Include="Log\LogNull.cs" />
+    <Compile Include="Log\LogTexto.cs" />
+    <Compile Include="Log\Mongo\LogMongoEntity.cs" />
+    <Compile Include="Log\Mongo\LogMongoService.cs" />
+    <Compile Include="Log\TipoApp\AppDirectorio.cs" />
+    <Compile Include="Log\TipoApp\AppWcf.cs" />
+    <Compile Include="Log\TipoApp\AppWeb.cs" />
+    <Compile Include="Log\TipoApp\ITipoApp.cs" />
+    <Compile Include="Log\TipoApp\TipoAppFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccesoDatos\Referencias\MongoDB.Bson.dll" />
+    <Content Include="AccesoDatos\Referencias\MongoDB.Driver.dll" />
+    <Content Include="AccesoDatos\Referencias\MySql.Data.dll" />
+    <Content Include="Archivos\Referencias\ClosedXML.dll" />
+    <Content Include="Archivos\Referencias\DocumentFormat.OpenXml.dll" />
+    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Log\Logs.cd" />
+    <None Include="packages.config" />
+    <None Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

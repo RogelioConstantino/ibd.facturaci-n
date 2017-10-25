@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sideMaster.master.cs" Inherits="Ibd.SiMer.Web.sideMaster" %>
+<!DOCTYPE html>
+<html>
+    <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title></title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    
+<div id="container">
+
+    <nav>
+      <ul class="hide-on-med-and-down">
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+      </ul>
+      <ul id="slide-out" class="side-nav fixed">
+          <li class="bold"><a href="#!" class="waves-effect waves-teal">First Sidebar Link</a></li>
+          <li class="bold"><a href="#!" class="">Second Sidebar Link</a></li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header waves-effect waves-teal">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!">First</a></li>
+                    <li><a href="#!">Second</a></li>
+                    <li><a href="#!">Third</a></li>
+                    <li><a href="#!">Fourth</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </nav>
+
+    <div id="content">
+        <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a>    
+        <h3>Simple Materialize Responsive Side Menu</h3>    
+        <p>Resize browser to see what it looks like in (a) brwoser (b) mobile devices</p>
+    </div>
+    
+    </div>
+
+    <script type = "text/javascript">
+        $('.button-collapse').sideNav({
+                                        menuWidth: 300, // Default is 240
+                                        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                                    }
+        );
+        $('.collapsible').collapsible();
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3913BA66-FD02-42BD-A770-DBACD542A1FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ibd.SiMer.Datos</RootNamespace>
+    <AssemblyName>Ibd.SiMer.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchivoBasesContratoDa.cs" />
+    <Compile Include="ArchivoCFECalificadosDa.cs" />
+    <Compile Include="ArchivoCincominutalDa.cs" />
+    <Compile Include="ArchivoInfoBasicaDa.cs" />
+    <Compile Include="ArchivoResumenFacDa.cs" />
+    <Compile Include="ArchivoSegregacionDa.cs" />
+    <Compile Include="AñosDa.cs" />
+    <Compile Include="BasesContratoDa.cs" />
+    <Compile Include="centralesDa.cs" />
+    <Compile Include="CFECalificadosDa.cs" />
+    <Compile Include="CincoMinutalesDa.cs" />
+    <Compile Include="clientesDa.cs" />
+    <Compile Include="ComportamientoDa.cs" />
+    <Compile Include="ConnectionDB.cs" />
+    <Compile Include="empresasDa.cs" />
+    <Compile Include="gruposDa.cs" />
+    <Compile Include="horarioDa.cs" />
+    <Compile Include="logCargaMinutalDa.cs" />
+    <Compile Include="MesesDa.cs" />
+    <Compile Include="PuntoCargaDa.cs" />
+    <Compile Include="puntosCargaDa.cs" />
+    <Compile Include="regionesDa.cs" />
+    <Compile Include="ResumenFacDa.cs" />
+    <Compile Include="segregacionDa.cs" />
+    <Compile Include="seguridadDa.cs" />
+    <Compile Include="tarifaDa.cs" />
+    <Compile Include="tarifasDa.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ibd.Framework">
+      <HintPath>..\..\Ibd.Framework\Ibd.Framework\bin\Debug\Ibd.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ibd.SiMer.Entidades\Ibd.SiMer.Entidades.csproj">
+      <Project>{547f143f-e1e2-4bc8-ab8b-8499e00498d9}</Project>
+      <Name>Ibd.SiMer.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

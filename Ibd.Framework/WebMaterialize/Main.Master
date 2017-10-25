@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebMaterialize.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:PlaceHolder runat="server">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <%: Styles.Render("~/bundles/css") %>
+        <%: Scripts.Render("~/bundles/js") %>
+    </asp:PlaceHolder>
+</head>
+<body>
+
+    <div class="i-cabecera-administracion">
+        Conectado: <span>U326440</span> | <a href="index.html">Cerrar sesión</a>
+    </div>
+    <!--cabecerad e logotipos-->
+<div class="i-cabecera-logos">
+    <a href="bienvenida.html">
+        <img src="<%= ResolveUrl("~/Content/img/iberdrola-logo.png") %>" alt="Iberdrola" /></a>
+<button class="i-menu-trigger" id="primary-nav-button" type="button">Menu</button>
+</div>
+
+
+<!-- Submenus -->
+<ul id="ddSeguridad" class="dropdown-content">
+  <li><a href="<%= ResolveUrl("~/Seguridad/Usuarios.aspx") %>">Usuarios</a></li>
+  <li><a href="<%= ResolveUrl("~/Index.aspx") %>">Roles</a></li>
+  <li class="divider"></li>
+</ul>
+
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+          <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="ddSeguridad">Seguridad<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+          <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="ddSeguridad1">Seguridad<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <br /><br /><br />
+
+    <a href="<%= ResolveUrl("~/Seguridad/Usuarios.aspx") %>">Usuarios</a>
+    <a href="<%= ResolveUrl("~/Index.aspx") %>">Tipo de cambio</a>
+    <br /><br /><br />
+
+    <div>
+        <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <script>
+        //Funciones Materialize 
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+
+    </script>
+</body>
+</html>
